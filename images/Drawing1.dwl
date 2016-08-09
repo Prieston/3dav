@@ -1,0 +1,3 @@
+PowerPC
+DESKTOP-12NJE0F 
+Tuesday, January 19, 2016  10:18:34 PM
