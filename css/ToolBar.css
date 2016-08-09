@@ -1,0 +1,109 @@
+a {
+	text-decoration: none;
+	
+}
+
+.mainHeader nav {
+	background-color:#666;
+	height:30px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+}
+
+
+.mainHeader nav ul {
+	list-style: none;
+	margin:0 auto;
+
+}
+.mainHeader nav ul li {
+	float: left;
+	display: inline;
+}
+
+.mainHeader nav li {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style:none;
+	float: left;
+
+}
+.mainHeader nav ul li:hover ul{
+display: block;
+border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+	
+.mainHeader nav ul ul {
+	display: none;
+	position: absolute;
+	padding: 0;
+	margin: 0 auto;
+	background-color: #333;
+
+}
+
+.mainHeader nav a:link, .mainHeader nav a:visited {
+
+	color: #FFF;
+	display: inline-block;
+	padding: 5px 25px;
+	height: 20px;
+}
+
+.mainHeader nav a:hover, .mainHeader nav a:active,
+.mainHeader nav .active a:link, .mainHeader nav .active a:visited {
+
+	background-color:#CF5C3F;
+	text-shadow:none;
+	vertical-align: center;
+}
+
+.mainHeader nav .active ul a {
+background-color: #333 !important; 
+}
+.mainHeader nav .active ul :hover a {
+background-color: #CF5C3F !important; 
+}
+
+.mainHeader nav ul .active ul .selected a{
+color: #777 !important; 
+
+}
+
+.mainHeader nav ul ul li {
+	text-align: center;
+	width: 240px;
+	height: auto;
+	border: 1px solid #444;
+	 box-shadow: 0px 0px 0px 1px #fff inset;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+}
+
+
+.mainHeader nav ul ul li a {
+
+width: 188px;
+height: auto;
+text-align: center;
+margin-top: 1px;
+margin-bottom: 1px;
+
+}
+.mainHeader nav ul li ul {
+	font-weight: bold;
+	font-size: 87.5%;
+}
+.mainHeader nav ul li a {
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
