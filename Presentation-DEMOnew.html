@@ -1,0 +1,956 @@
+<!--DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"-- test Lines(186 -188)-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+
+	<title>Demonstration</title>
+	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css/widgets.css">
+	<link rel="stylesheet" type="text/css" href="./css/Qgis2threejs.css">
+	<link rel="stylesheet" type="text/css" href="./css/ToolBar.css">
+	<link type="text/css" rel="stylesheet" href="./css/layout-default-latest.css" />
+	<link href="./jquery/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+	
+	
+	
+
+	<style>.button {
+    -webkit-box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.45), 0px 2px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.45), 0px 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.45), 0px 2px 2px rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+	
+}
+.ui-progressbar {
+position: relative;
+}
+.progress-label {
+position: absolute;
+left: 50%;
+top: 4px;
+font-weight: bold;
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div id = "LoadModelsDiv" style="width:100%;height:100%;position:absolute;z-index:1000;background-color:white">
+<center>
+
+<img src="./images/LOGO.jpg" style="margin-top:20%;width:50%;height:auto;"/>
+<div id="progressbar" style="color:#CCCFFF;width:50%;position:relative"><div class="progress-label">Loading...</div></div>
+
+</center>
+</div>
+
+
+<!--WEST PANE-->
+<!-- allowOverflow auto-attached by option: west__showOverflowOnHover = true -->
+<div class="ui-layout-west" id="WestPanel" style="padding:0%; overflow:auto;">
+		
+			<h4 style="margin:5px">Layer Panel</h4>
+			<hr style="margin:0px;color:#FFF"/>
+			<ul>
+				<li id="MapTextureLayer" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Map Texture</li>
+				
+				<div id="MapTextureLayerContent" style="display:none;">
+					
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="MapTextureLayer_Geometry" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Geometry</li>
+							
+						
+							<ul id="MapTextureLayer_GeometryContent" style="padding:0px;display:none;list-style-type: none;">
+							
+								<input type = "checkbox" id = "GeometryWireframe" onchange="displayMapTexture(this.id)" style = "display:inline"><label>WireFrame</label></input>
+								</br>
+								<input type = "checkbox" id = "GeometrySolid" onchange="displayMapTexture(this.id)" style = "display:inline"><label>Solid</label></input>
+							
+							
+							
+							</ul>
+							
+						
+						</ul>
+						
+						<ul style="padding:0px 0px 0px 10px;clear:left">
+						
+							<li id="MapTextureLayer_Texture" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Texture</li>
+							
+						
+							<ul id="MapTextureLayer_TextureContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "TextureLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+						
+						
+					</div>
+			</ul>
+			<ul>
+				<li id="ModelLayer" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Model Layer</li>
+				
+				<div id="ModelLayerContent" style="display:none;">
+					
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="ModelLayer_Plants" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Plants</li>
+							
+						
+							<ul id="ModelLayer_PlantsContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "PlantLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+						
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="ModelLayer_Animals" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Animals</li>
+							
+						
+							<ul id="ModelLayer_AnimalsContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "AnimalLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+						
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="ModelLayer_Ground" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Water</li>
+							
+						
+							<ul id="ModelLayer_GroundContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "GroundLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="ModelLayer_Other" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Other</li>
+							
+						
+							<ul id="ModelLayer_OtherContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "OtherLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+					</div>
+			</ul>
+			
+			
+			
+			<ul>
+				<li id="MapLayer" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Map Layer</li>
+				
+				<div id="MapLayerContent" style="display:none;">
+					
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="MapLayer_Points" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Points</li>
+							
+						
+							<ul id="MapLayer_PointsContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "PointLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+						
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="MapLayer_Lines" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Lines</li>
+							
+						
+							<ul id="MapLayer_LinesContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "LineLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+						
+						<ul style="padding:0px 0px 0px 10px">
+						
+							<li id="MapLayer_Polygon" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							Polygon</li>
+							
+						
+							<ul id="MapLayer_PolygonContent" style="padding:0px;display:none;list-style-type: none;">
+							<li id = "PolygonLayers">
+							</li>
+							</ul>
+							
+						
+						</ul>
+					</div>
+			</ul>
+					
+	<!--<button onclick="LoadTrees()">LoadTrees</button>
+	<button onclick="LoadAnimals()">LoadAnimals</button>
+	<p id = "help">asdf</p>-->
+</div>
+
+<!--SOUTH PANE-->
+<div class="ui-layout-south" id="SouthPanel" style="margin:20px;overflow:hidden;" >
+
+	<div id="tabs" style="height:100%;width:100%;">
+		<ul>
+			<li><a href="#tabs-1">Attributes' table</a></li>
+			
+		</ul>
+		
+		<div id="tabs-1">
+		<div id="users-contain" class="ui-widget" style="width:100%;height:100%">
+		<div id="Tab2Container" style="margin:0%;padding-bottom:50px;width:100%;height:60%;overflow:auto;">
+	
+	
+		<div id="radioset">
+				<input type="radio" id="radioAttributeTableModel" name="radio" checked="checked" onchange="displayLayerAttributes_Model()"><label for="radioAttributeTableModel">Model Layer</label>
+				<input type="radio" id="radioAttributeTableMap" name="radio" onchange="displayLayerAttributes_Map()"><label for="radioAttributeTableMap">Map Layer</label>
+				
+				
+				<select id="AttributeTableLayer_selectmenu_model" style="width:auto;display:inline;margin-left:8px">
+				</select>
+				
+				<select id="AttributeTableLayer_selectmenu_map" style="width:auto;display:none;margin-left:8px">
+				</select>
+			
+			
+				<button class="button" title="Show Attribute Table" style="background-image: url(images/show-button.png);
+				background-repeat: no-repeat; width:35px;height:22px;background-size:100%;margin-left:5px" onclick="showAttributeTable()"/>
+		</div>	
+		
+		</div>
+			
+			
+		</div>
+		</div>
+		<div id="tabs-2">
+		<div id="Tab3Container" style="margin:0%;width:100%;height:80%;overflow:auto;">
+		
+		<!--PLANT PROPERTIES-->
+		<h2 style="position:relative;">Plant Properties</h2>
+		<ul style="float:left">
+		
+					<li id="PlantPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id);">Position Type</li>
+					
+					<div id="PlantPositionTypeContent" style="display:none;">
+					
+						<li style="display:block;">
+							<input id="PlantPositionType_point" type="Radio" name="PlantPositionType" style="display:inline-block;" Onchange  = "plantPosType_point()" checked="checked">Point</input>
+							
+							<select id="PlantPositionType_selectmenu_point" style="width:auto;" disabled="true">
+								
+							</select>
+
+						</li>
+						<li style="display:block;" >
+							<input id="PlantPositionType_line" type="Radio" name="PlantPositionType" style="display:inline-block;" Onchange  = "plantPosType_line()">Line</input>
+							
+							<select id="PlantPositionType_selectmenu_line" style="width:auto;">
+								
+							</select>
+						</li>
+						<li style="display:block;" >
+							<input  id="PlantPositionType_polygon" type="Radio" name="PlantPositionType" style="display:inline-block;" Onchange  = "plantPosType_polygon()">Polygon</input>
+							
+							<select id="PlantPositionType_selectmenu_polygon" style="width:auto;">
+								
+							</select>
+						</li>
+						
+					</div>
+					
+					
+			
+		</ul>
+		<div id = "PlantPosType_line_properties" style= "float:left;padding-left:30px;display:none">
+					<center><b><u>Line Properties</u></b></center><br/>
+					
+					<label style="float:left">Interval(m):</label>
+					<input type="textbox" id= "PlantPos_line_properties_interval" style="width:100px"/>
+					
+			
+		</div>
+		<div id = "PlantPosType_polygon_properties" style= "float:left;padding-left:30px;display:none">
+					<center><b><u>Polygon Properties</u></b></center><br/>
+					<input type="checkbox" id= "PlantPos_polygon_properties_PlaceAtBoundary"style="float:left"/>
+					<label style="float:left">Place at Boundary</label>
+					
+					<input type="checkbox" id= "PlantPos_polygon_properties_PlaceInside" style="float:left"/>
+					<label>Place inside</label><br/><br/>
+					<label style="float:left">Interval X(m):</label>
+					<input type="textbox" id= "PlantPos_polygon_properties_intervalX" style="width:100px"/>
+					<label style="float:left">Interval Y(m):</label>
+					<input type="textbox" id= "PlantPos_polygon_properties_intervalY" style="width:100px"/>
+			
+		</div>
+		
+<br />		
+<hr style="color:#FFF;clear:left"/>
+
+<!--ANIMAL PROPERTIES-->
+<h2 style="position:relative;">Animal Properties</h2>
+		<ul style="float:left">
+		
+					<li id="AnimalPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
+					
+					<div id="AnimalPositionTypeContent" style="display:none;">
+					
+						<li style="display:block;">
+							<input id="AnimalPositionType_point" type="Radio" name="AnimalPositionType" style="display:inline-block;" Onchange  = "animalPosType_point()" checked="checked">Point</input>
+							
+							<select id="AnimalPositionType_selectmenu_point" style="width:auto;" disabled="true">
+			
+							</select>
+						</li>
+						<li style="display:block;" >
+							<input id="AnimalPositionType_line"type="Radio" name="AnimalPositionType" style="display:inline-block;" Onchange  = "animalPosType_line()">Line</input>
+							
+							<select id="AnimalPositionType_selectmenu_line" style="width:auto;">
+								
+							</select>
+						</li>
+						<!--<li style="display:block;" >
+							<input  id="AnimalPositionType_polygon" type="Radio" name="AnimalPositionType" style="display:inline-block;" Onchange  = "animalPosType_polygon()">Polygon</input>
+							
+							<select id="AnimalPositionType_selectmenu_polygon" style="width:auto;">
+								
+							</select>
+						</li>-->
+						
+					</div>
+		</ul>
+		
+<br />		
+<hr style="color:#FFF;clear:left"/>
+
+
+<!--WATER PROPERTIES-->
+<h2 style="position:relative;">Water Properties</h2>
+		<ul style="float:left">
+		
+					<li id="GroundPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
+					
+					<div id="GroundPositionTypeContent" style="display:none;">
+					
+						
+						<li style="display:block;" >
+							<input  id="GroundPositionType_polygon" type="Radio" name="GroundPositionType" style="display:inline-block;" Onchange  = "groundPosType_polygon()">Polygon</input>
+							
+							<select id="GroundPositionType_selectmenu_polygon" style="width:auto;">
+							
+							</select>
+						</li>
+						
+					</div>
+		</ul>
+		
+		<div id = "GroundPosType_polygon_properties" style= "float:left;padding-left:30px;display:none">
+					<center><b><u>Polygon Properties</u></b></center><br/>
+					<input type="checkbox" id= "GroundPos_polygon_properties_PlaceAtBoundary"style="float:left"/>
+					<label style="float:left">Place at Boundary</label>
+					
+					<input type="checkbox"id= "GroundPos_polygon_properties_PlaceInside" style="float:left"/>
+					<label>Place inside</label><br/><br/>
+					<label style="float:left">Interval X(m):</label>
+					<input type="textbox" id= "GroundPos_polygon_properties_intervalX"style="width:100px"/><label style="float:left">Interval Y(m):</label>
+					<input type="textbox" id= "GroundPos_polygon_properties_intervalY"style="width:100px"/>
+			
+		</div>
+		<br />		
+<hr style="color:#FFF;clear:left"/>
+		
+		<!--OTHER PROPERTIES-->
+<h2 style="position:relative;">Other Model Properties</h2>
+		<ul style="float:left">
+		
+					<li id="OtherPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
+					
+					<div id="OtherPositionTypeContent" style="display:none;">
+					
+						<li style="display:block;">
+							<input id="OtherPositionType_point" type="Radio" name="OtherPositionType" style="display:inline-block;" Onchange  = "otherPosType_point()" checked="checked">Point</input>
+							
+							<select id="OtherPositionType_selectmenu_point" style="width:auto;" disabled="true">
+			
+							</select>
+						</li>
+						<li style="display:block;" >
+							<input id="OtherPositionType_line"type="Radio" name="OtherPositionType" style="display:inline-block;" Onchange  = "otherPosType_line()">Line</input>
+							
+							<select id="OtherPositionType_selectmenu_line" style="width:auto;">
+								
+							</select>
+						</li>
+						<!--<li style="display:block;" >
+							<input  id="AnimalPositionType_polygon" type="Radio" name="AnimalPositionType" style="display:inline-block;" Onchange  = "animalPosType_polygon()">Polygon</input>
+							
+							<select id="AnimalPositionType_selectmenu_polygon" style="width:auto;">
+								
+							</select>
+						</li>-->
+						
+					</div>
+		</ul>
+		
+<br />		
+<hr style="color:#FFF;clear:left"/>
+
+
+		</div>
+		
+		</div>
+		
+	</div>
+</div>
+	
+
+<!--EAST PANE-->
+<div class="ui-layout-east" id="EastPanel" style="padding:1%">
+	<!-- Dialog NOTE: Dialog is not generated by UI in this demo so it can be visually styled in themeroller-->
+	<div id="Step1">
+	<p>Step 1 is to create a geometry with texture and map layers:</p>
+<button  id="step-1" style = "width:100px;height:100px;background-image: url(images/Demonstration/create-geometry.png);background-repeat: no-repeat;background-size:100%;">Step 1</button>
+</div>
+<div id="Step2">
+<p>Step 2 is to add static models at their layers respectively:</p>
+<button  id="step-2" style = "width:100px;height:100px;background-image: url(images/trees/Bougainvillier.jpg);background-repeat: no-repeat;background-size:100%;">Step 2</button>
+</div>
+<div id="Step3">
+<p>Step 3 is to add water material inside a polygon area:</p>
+<button  id="step-3" style = "width:100px;height:100px;background-image: url(images/house/House.jpg);background-repeat: no-repeat;background-size:100%;">Step 3</button>
+</div>
+<div id="Step4">
+<p>Step 4 is to add animated and moving spatial objects:</p>
+<button  id="step-4" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-palm-arecaceae.jpg);background-repeat: no-repeat;background-size:100%;">Step 4</button>
+</div>
+<div id="Step5">
+<p>Step 5 is to translate the custom world on a virtual earth:</p>
+<button  id="step-5" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-flamboyant.jpg);background-repeat: no-repeat;background-size:100%;">Step 5</button>
+</div>
+<div id="Step6">
+	</div>
+		<!-------------------------------------------->
+
+		<!-------------------------------------------->
+		<div id="Trees" style="display:none;">
+			<h2 style="position:relative;">Available Plants<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeTrees()">x</button></h2>
+		  
+			<button  id="Beech-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-beech.jpg);background-repeat: no-repeat;background-size:100%;">Beech</button>
+			<button  id="Bamboo-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Bamboo-grp.jpg);background-repeat: no-repeat;background-size:100%;">Bamboo</button>
+			<button  id="Banana-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-banana.jpg);background-repeat: no-repeat;background-size:100%;" >Banana</button>
+			<button  id="Bougainvillier-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Bougainvillier.jpg);background-repeat: no-repeat;background-size:100%;" >Bougain-villier</button>
+			<button  id="Dracena-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-dracena.jpg);background-repeat: no-repeat;background-size:100%;">Dracena</button>
+			<button  id="Elm-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Elm.jpg);background-repeat: no-repeat;background-size:100%;">Elm</button>
+			<button  id="Flamboyant-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-flamboyant.jpg);background-repeat: no-repeat;background-size:100%;">Flamboyant</button>
+			<button  id="Ginger-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-ginger.jpg);background-repeat: no-repeat;background-size:100%;">Ginger</button>
+
+			<button  id="Palm_arecaceae-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-palm-arecaceae.jpg);background-repeat: no-repeat;background-size:100%;">Palm arecaceae</button>
+			<button  id="Pine-createLayer" style = "width:100px;height:100px;background-image: url(images/trees/Greenhouse-pine.jpg);background-repeat: no-repeat;background-size:100%;">Pine</button>
+			<button  id="Wintertree-createLayer"style = "width:100px;height:100px;background-image: url(images/trees/Wintertree.png);background-repeat: no-repeat;background-size:100%;" >Wintertree</button><br />
+		<br/><hr style="margin:0px;color:#FFF"/>
+		</div>
+		
+		
+		<!--GROUND-->
+		<div id="Water" style="display:none;">
+			<h2 style="position:relative;">Available Water<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeWater()">x</button></h2>
+			<button  id="Water-createLayer" style = "width:100px;height:100px;background-image: url(images/water/water.jpg);background-repeat: no-repeat;background-size:100%;">Water</button>
+			<br/><hr style="margin:0px;color:#FFF"/>
+		</div>
+		
+		<!--ANIMALS-->
+		<div id="Animals" style="display:none;">
+			<h2 style="position:relative;">Available Animals<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeAnimals()">x</button></h2>
+			<button  id="Horse-createLayer" style = "width:100px;height:100px;background-image: url(images/animals/Horse_3d_Model.jpg);background-repeat: no-repeat;background-size:100%;">Horse</button><br />
+			<br/><hr style="margin:0px;color:#FFF"/>
+		</div>
+		<!--OTHER-->
+		<div id="OtherModels" style="display:none;">
+			<h2 style="position:relative;">Other Models<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeOtherModels()">x</button></h2>
+			<button  id="Car-createLayer" style = "width:100px;height:100px;background-image: url(images/car/L-200.png);background-repeat: no-repeat;background-size:100%;">Car</button>
+			<button  id="House-createLayer" style = "width:100px;height:100px;background-image: url(images/house/House.jpg);background-repeat: no-repeat;background-size:100%;">House</button><br />
+			<br/><hr style="margin:0px;color:#FFF"/>
+		</div>
+		<!--SET WORLD WIDTH-->
+		<div id="SetWorldWidth" style="display:none;">
+			<h2 style="position:relative;">Set World Width<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeSetWorldWidth()">x</button></h2>
+			
+			<label>X Min:</label><input type="text" id="Coord_XMin"></input><br />
+			<label>X Max:</label><input type="text" id="Coord_XMax"></input><br />
+			
+			<button id="set-world-width">Submit</button>
+		
+			<br />
+			<br />
+			<hr style="margin:0px;color:#FFF"/>
+		</div>
+		
+		<!--CREATE 3D GEOMETRY-->
+		<div id="Create3DGeometry" style="display:none;">
+			<h2 style="position:relative;">Create 3D Geometry<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeCreate3DGeometry()">x</button></h2>
+			
+			<label>3D Geometry Type:</label>
+			<select id="3DGeometryType_selectmenu" onchange="display3DGeometryProperties()" style="width:auto;">
+				<option>Box</option>				
+				<option>Sphere</option>				
+				<option>Pyramid</option>				
+				<option>Cylinder</option>				
+			</select>
+			<br />
+			<br />
+
+			
+			<div id="BoxProperties">
+				<label style="float:left;">Length(X):</label><input type="text" id="BoxLength"></input><br/>
+				<label style="float:left;">Width(Y):</label><input type="text" id="BoxWidth"></input><br />
+				<label style="float:left;">Height(Z):</label><input type="text" id="BoxHeight"></input><br />
+				<label style="float:left;">Set Color:</label><input type="text" id="3DGeometryColor" class="color" value="66ff00"></input><br />
+				<label style="float:left;">Set Opacity:</label><input type="text" id="3DGeometryOpacity"style="width:30px"></input><br />
+				<label style="float:left;">WireFrame:</label><input type="checkbox" id="3DGeometryWireFrame"></input><br />
+				<label style="float:left;">Position Type:</label>
+				
+				<select id="3DGeometryBox_selectmenu_positionType" style="width:auto;">
+					<option>0,0,0</option>				
+					<option>Point</option>				
+				
+				</select>
+				<br />
+				<br />
+				
+			</div>
+			
+			<button id="create-3D-Geometry">Submit</button>
+		
+			<br/><hr style="margin:0px;color:#FFF"/>
+		</div>
+		
+		
+		<!--------CREATE POINT LAYER TABLE-->
+		
+		<div id="CreatePointLayer" style="display:none;">
+			<h2 style="position:relative;">Create Point Layer<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeCreatePointLayerTable()">x</button></h2>
+			<div id="users-contain" class="ui-widget" style="width:98%;height:200px;overflow:auto">
+				<table id="CreatePointLayer_Table" class="ui-widget ui-widget-content">
+				
+					<thead>
+						<tr class="ui-widget-header" >
+							<th style="text-align:center">ID</th>
+							<th style="text-align:center">X</th>
+							<th style="text-align:center">Y</th>
+							<th style="text-align:center">Z</th>
+						</tr>
+					</thead>
+
+					<tbody id="CreatePointLayer_tbody" ></tbody>
+			
+				</table>
+			</div>
+			
+			
+			<button id="submit-pointLayerTable" >Submit</button>
+			<button id="clear-pointLayerTable" >Clear</button>
+		
+			
+		<br/>
+		<br/>
+		<hr style="margin:0px;color:#FFF"/>
+		</div>
+		<!--------CREATE LINE LAYER TABLE-->
+		
+<div id="CreateLineLayer" style="display:none;">
+			<h2 style="position:relative;">Create Line Layer<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeCreateLineLayerTable()">x</button></h2>
+			<div id="users-contain" class="ui-widget" style="width:98%;height:200px;overflow:auto">
+				<table id="CreateLineLayer_Table" class="ui-widget ui-widget-content">
+				
+					<thead>
+						<tr class="ui-widget-header" >
+							<th style="text-align:center">ID</th>
+							<th style="text-align:center">X</th>
+							<th style="text-align:center">Y</th>
+							<th style="text-align:center">Z</th>
+						</tr>
+					</thead>
+
+					<tbody id="CreateLineLayer_tbody" ></tbody>
+			
+				</table>
+			</div>
+			
+			
+			<button id="submit-lineLayerTable" >Submit</button>
+			<button id="clear-lineLayerTable" >Clear</button>
+		
+			
+		<br/>
+		<br/>
+		<hr style="margin:0px;color:#FFF"/>
+</div>
+		<!--------CREATE POLYGON LAYER TABLE-->
+		
+		<div id="CreatePolygonLayer" style="display:none;">
+			<h2 style="position:relative;">Create Polygon Layer<button style="position:absolute; top:0px;right:0px;width:1%;height:20px;font-size:10px;color:#FFF;background-color:#CC0000" onclick="closeCreatePolygonLayerTable()">x</button></h2>
+			<div id="users-contain" class="ui-widget" style="width:98%;height:200px;overflow:auto">
+				<table id="CreatePolygonLayer_Table" class="ui-widget ui-widget-content">
+				
+					<thead>
+						<tr class="ui-widget-header" >
+							<th style="text-align:center">ID</th>
+							<th style="text-align:center">X</th>
+							<th style="text-align:center">Y</th>
+							<th style="text-align:center">Z</th>
+						</tr>
+					</thead>
+					<tbody id="CreatePolygonLayer_tbody"></tbody>
+				</table>
+			</div>
+			
+			<button id="submit-polygonLayerTable" >Submit</button>
+			<button id="clear-polygonLayerTable" >Clear</button>
+		<br/>
+		<br/>
+		<hr style="margin:0px;color:#FFF"/>
+		</div>
+		
+</div>
+
+
+<div class="ui-layout-center" id="webgl" style="padding:0;margin:0;overflow:hidden;"></div>
+
+<!--FOOTER PANE-->
+<div id="footer" >
+	<div id="coords" align= "right" style="position:relative;font-size:87%">X:0.00, Y:0.00, Z:0.00</div>
+</div>
+<!--DIALOGS-->
+
+<!--create world dialog-->
+<div id="create-world-form" title="Create new world">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+		
+			<input type="file" class="text ui-widget-content" id="points-upload"/>
+			
+			<label>Data TagName:</label>
+			<input type="text" class= "text ui-widget-content" id="data-TagName"/>
+			<label>Grid Columns</label>
+			<input type="text" class= "text ui-widget-content" id="GridColumns"/>
+			<label>Grid Rows</label>
+			<input type="text" class= "text ui-widget-content" id="GridRows"/>
+			
+					<!--------CREATE WORLD TABLE-->
+		
+
+			<input type="button" id="check-WorldTable" onclick = "createWorldTable()" value="Check World"/>
+			<div id="users-contain" class="ui-widget" style="width:98%;height:200px;overflow:auto">
+				<table id="CreateWorld_Table" class="ui-widget ui-widget-content">
+				
+					<thead>
+						<tr class="ui-widget-header" >
+							<th style="text-align:center">ID</th>
+							<th style="text-align:center">X</th>
+							<th style="text-align:center">Y</th>
+							<th style="text-align:center">Z</th>
+						</tr>
+					</thead>
+
+					<tbody id="CreateWorld_Table_tbody" ></tbody>
+			
+				</table>
+			</div>
+				
+			<label>X minimum:</label>
+			<input type="text" class= "text ui-widget-content" id="createXmin"/>	
+			<label>Y minimum:</label>
+			<input type="text" class= "text ui-widget-content" id="createYmin"/>	
+			<label>X maximum:</label>
+			<input type="text" class= "text ui-widget-content" id="createXmax"/>	
+			<label>Y maximum:</label>
+			<input type="text" class= "text ui-widget-content" id="createYmax"/>	
+			
+			<br/>
+			<br/>
+			<hr style="margin:0px;color:#FFF"/>
+
+				<!-- Allow form submission with keyboard without duplicating the dialog button -->
+				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+			</form>
+</div>
+<!--load texture dialog-->
+<div id="load-texture-form" title="Load new map teture">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+		
+			<input type="file" class="text ui-widget-content" id="mapTexture-upload"  onchange="readURL(this);"/>
+			<label>Texture Layer Name</label>
+			<input type="textbox" class="text ui-widget-content" id="MapTextureLayerName"/>
+			
+			
+			<br/>
+			<br/>
+			<hr style="margin:0px;color:#FFF"/>
+
+				<!-- Allow form submission with keyboard without duplicating the dialog button -->
+				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+			</form>
+</div>
+
+
+<!--create points dialog-->
+<div id="create-point-layer-form" title="Create new point layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "PointLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+<!--create lines dialog-->
+<div id="create-line-layer-form" title="Create new line layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "LineLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			<input type="radio" id="SeperateLines" name="LineType" style="display:inline">Seperate Lines</input>
+			<input type="radio" id="PolyLine" name="LineType" style="display:inline">Polyline</input>
+			<br />
+			<input type="checkbox" id="calculateDistanse" name="checkDistance" style="display:inline">Calculate Distance (S)</input>
+			<input type="checkbox" id="calculateAngle" name="checkAngle"  style="display:inline">Calculate Angle (G)</input>
+			
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+<!--create polygon dialog-->
+<div id="create-polygon-layer-form" title="Create new polygon layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "PolygonLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+
+<!--create plants dialog-->
+<div id="create-plant-layer-form" title="Create new plant layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "PlantLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			<input type="checkbox" id="testPlantsPosition">only for testing</input>
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+<!--create animals dialog-->
+<div id="create-animal-layer-form" title="Create new animal layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "AnimalLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			<input type="checkbox" id="testAnimalsPosition">only for testing</input>
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+<!--create water dialog-->
+<div id="create-water-layer-form" title="Create ground layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "WaterLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			<label for="z-position">Z Position :</label>
+			<input type="text"  id = "WaterLayerZposition"  name="z-position" id="name" value="" class="text ui-widget-content ui-corner-all">
+			
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+<!--create House dialog-->
+<div id="create-house-layer-form" title="Create other layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "HouseLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			<label for="z-position">orientation (G) :</label>
+			<input type="text"  id = "HouseLayerOrientation"  name="z-position" id="name" value="" class="text ui-widget-content ui-corner-all">
+				<input type="checkbox" id="testOtherPosition">only for testing</input>
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+<!--create Car dialog-->
+<div id="create-car-layer-form" title="Create other layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "CarLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			
+				<input type="checkbox" id="testOtherPosition">only for testing</input>
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+<!--create ground dialog-->
+<div id="create-ground-layer-form" title="Create ground layer">
+			<p class="validateTips">All form fields are required.</p>
+			<form>
+			<fieldset>
+			<label for="name">Layer Name :</label>
+			<input type="text"  id = "GroundLayerName"  name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+			
+			
+			<!-- Allow form submission with keyboard without duplicating the dialog button -->
+			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+			</form>
+</div>
+
+	
+	<!-- LOAD SCRIPTS -->
+	
+	<script src="./threejs/three.min.js"></script>
+	<script src="./scripts/Qgis2threejs.js"></script>
+
+	
+	<script src="./threejs/TrackballControls.js"></script>
+	<script src="./scripts/Container.js"></script>
+	
+	<script src="./jquery/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+	<script src="./jquery/jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script src="./jquery/jquery-latest.js"></script>
+	<script src="./jquery/jquery-ui-latest.js"></script>
+	<script src="./jquery/jquery.layout-1.3.0.rc30.80.js"></script>
+	<script src="./scripts/Dialog&Tabs.js"></script>
+	<script src="./scripts/ModalForm.js"></script>
+	<script src="./scripts/panel.js"></script>
+	<script src="./scripts/DisplayAndClose.js"></script>
+	<script src="./scripts/ToolbarFunctions.js"></script>
+	<script src="./scripts/jscolor/jscolor.js"></script>
+	
+	<!-------->	
+	<script src="./scripts/js/Mirror.js"></script>
+	<script src="./scripts/js/WaterShader.js"></script>
+
+	<!-------->
+<!-----------------------------------TEST SCRIPTS--------------------------------------- -->
+
+	<script src="./scripts/computeCoords.js"></script>
+
+	<script src="./scripts/AddWater.js"></script>
+	<script src="./scripts/AddTrees.js"></script>						
+	<script src="./scripts/AddHorse.js"></script> 
+<script src="./scripts/CalculateDeltaPosition.js"></script> 
+
+
+<!--<script src="./scripts/WolfLoader.js"></script>---->
+	<script src="./scripts/computeAnimationPosition.js"></script>
+	<script src="./scripts/ThemeliodiProblimata.js"></script>
+	<script src="./scripts/LoadTrees.js"></script>
+	<script src="./scripts/LoadAnimals.js"></script>
+	<script src="./scripts/createModelLayer.js"></script>
+	<script src="./scripts/SetWorldWidth.js"></script>
+	<script src="./scripts/Create3DGeometry.js"></script>
+	<script src="./scripts/CreateWorld.js"></script>
+	<script src="./scripts/UploadXML.js"></script>
+	<script src="./scripts/loaders/DDSLoader.js"></script>
+	<script src="./scripts/loaders/MTLLoader.js"></script>
+	<script src="./scripts/loaders/OBJMTLLoader.js"></script>
+	<script src="./scripts/loaders/OBJLoader.js"></script>
+	<script src="./scripts/PointLinePolygonModels.js"></script>
+	<script src="./scripts/LoadOther.js"></script>
+	<script src="./scripts/AddHouse.js"></script>
+	<script src="./scripts/AddCar.js"></script>
+	<script src="./scripts/createWorldPRESENTATIONnew.js"></script>
+<script src="./scripts/earthView.js"></script>
+	
+
+
+
+
+	<script type="text/javascript">
+	$('#ModelLayer').on("contextmenu",function(){
+   alert(this.id);
+}); 
+
+</script>
+<script>
+$(function() {
+var progressbar = $( "#progressbar" ),
+progressLabel = $( ".progress-label" );
+
+progressbar.progressbar({
+value: false,
+change: function() {
+progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+},
+complete: function() {
+progressLabel.text( "Complete!" );
+document.getElementById("LoadModelsDiv").style.display = "none";
+
+}
+});
+function progress() {
+var val = progressbar.progressbar( "value" ) || 0;
+progressbar.progressbar( "value", val + 2 );
+
+if ( val < 99 ) {
+setTimeout( progress, 50 );
+}
+}
+setTimeout( progress, 100 );
+});
+
+
+
+</script>
+	
+	<!-- ------------------------------------------------ -->					
+</body>
+</html>
