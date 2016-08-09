@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="jQuery Window, Window Widget, Window" />
+    <meta name="description" content="The jqxWindow is a floating window which have two main parts - title and content. In the title you can have any html content and close button.
+                                      In the content you could put any html content." />
+    <title id='Description'>You can use the jqxWindow to direct a user’s attention to a particular activity in your application, such as entering data or viewing information. Consider using a jqxWindow when you want greater customization, you want to block the user interface outside the window, or when you want to retrieve a DialogResult and other data from the popup window. jqxWindow can be displayed as a modal dialog window that blocks user interaction with the underlying user interface or as a standard window without blocking the web page's user interface.</title>
+    <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxwindow.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxpanel.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxtabs.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcheckbox.js"></script>
+    <script type="text/javascript" src="../../scripts/demos.js"></script>
+    <script type="text/javascript">
+        var basicDemo = (function () {
+            //Adding event listeners
+            function _addEventListeners() {
+                $('#resizeCheckBox').on('change', function (event) {
+                    if (event.args.checked) {
+                        $('#window').jqxWindow('resizable', true);
+                    } else {
+                        $('#window').jqxWindow('resizable', false);
+                    }
+                });
+                $('#dragCheckBox').on('change', function (event) {
+                    if (event.args.checked) {
+                        $('#window').jqxWindow('draggable', true);
+                    } else {
+                        $('#window').jqxWindow('draggable', false);
+                    }
+                });
+                $('#showWindowButton').click(function () {
+                    $('#window').jqxWindow('open');
+                });
+                $('#hideWindowButton').click(function () {
+                    $('#window').jqxWindow('close');
+                });
+            };
+
+            //Creating all page elements which are jqxWidgets
+            function _createElements() {
+                $('#showWindowButton').jqxButton({ width: '70px' });
+                $('#hideWindowButton').jqxButton({ width: '65px' });
+                $('#resizeCheckBox').jqxCheckBox({ width: '185px', checked: true });
+                $('#dragCheckBox').jqxCheckBox({ width: '185px', checked: true });
+            };
+
+            //Creating the demo window
+            function _createWindow() {
+                $('#window').jqxWindow({
+                    showCollapseButton: true, maxHeight: 400, maxWidth: 700, minHeight: 200, minWidth: 200, height: 300, width: 500,
+                    initContent: function () {
+                        $('#tab').jqxTabs({ height: '100%', width:  '100%' });
+                        $('#window').jqxWindow('focus');
+                    }
+                });
+            };
+
+            return {
+                config: {
+                    dragArea: null
+                },
+                init: function () {
+                    //Creating all jqxWindgets except the window
+                    _createElements();
+                    //Attaching event listeners
+                    _addEventListeners();
+                    //Adding jqxWindow
+                    _createWindow();
+                }
+            };
+        } ());
+
+        $(document).ready(function () {  
+            //Initializing the demo
+            basicDemo.init();
+        });
+    </script>
+</head>
+<body class='default'>
+    <div id="jqxWidget">
+        <div style="float: left;">
+            <div>
+                <input type="button" value="Open" id="showWindowButton" />
+                <input type="button" value="Close" id="hideWindowButton" style="margin-left: 5px" />
+            </div>
+            <div style="margin-top: 10px;">
+                <div id="resizeCheckBox">
+                    Resizable
+                </div>
+                <div id="dragCheckBox">
+                    Enable drag
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%; height: 650px; margin-top: 50px;" id="mainDemoContainer">
+            <div id="window">
+               <div></div>
+               <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

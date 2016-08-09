@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id="Description">Data Binding to XML data in jqxDataTable</title>
+    <meta name="description" content="This sample demonstrates how we can bind jQWidgets DataTable widget to XML Data by using jQWidgets DataAdapter plugin.">
+    <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script> 
+    <script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxdatatable.js"></script> 
+    <script type="text/javascript" src="../../scripts/demos.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D'http%3A%2F%2Fdemo.boundlessgeo.com%2Fgeoserver%2Fwms%3Frequest%3DGetCapabilities'";
+
+            // prepare the data
+            var source =
+            {
+                datatype: "xml",
+                datafields: [
+                    { name: 'CompanyName', map: 'Name', type: 'string' },
+                    { name: 'Title', map: 'Title', type: 'string' },
+                    { name: 'Title', map: 'ASD', type: 'string' },
+                    
+                ],
+                root: "WMS_Capabilities",
+                record: "Layer>Layer",
+                url: url
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+
+            // Create jqxGrid
+			var js = {}
+            $("#dataTable").jqxDataTable(
+            {
+                width: 850,
+                source: dataAdapter,
+                pageable: true,
+                filterable:true,
+                pagerButtonsCount: 10,
+                columnsResize: true,
+				showHeader:false,
+                columns: [
+                  { text: 'Company Name', datafield: 'CompanyName', width: 100}
+            
+                
+                ]
+            });
+            $("#dataTable1").jqxDataTable(
+            {
+                width: 850,
+                source: dataAdapter,
+                pageable: true,
+                pagerButtonsCount: 10,
+                columnsResize: true,
+                columns: [
+                 
+                  { text: 'Title Name', datafield: 'Title', width: 250 },
+                  { text: 'Title Name', datafield: 'ASD', width: 250 },
+                
+                ]
+            });
+        });
+    </script>
+</head>
+<body class='default'>
+    <div id="dataTable"></div>
+    <div id="dataTable1"></div>
+</body>
+</html>

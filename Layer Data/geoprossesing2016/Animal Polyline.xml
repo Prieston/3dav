@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>PowerPC</Author>
+  <LastAuthor>PowerPC</LastAuthor>
+  <Created>2016-01-21T19:56:43Z</Created>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>4440</WindowHeight>
+  <WindowWidth>6675</WindowWidth>
+  <WindowTopX>240</WindowTopX>
+  <WindowTopY>75</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Φύλλο1">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="36" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451886.67210000003</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438968.2917999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.3235000000000001</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451883.67379999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438975.4715999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.3311000000000002</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451877.89799999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438976.3218</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.4324000000000003</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451871.03649999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438973.5132999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.9372999999999996</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451864.09950000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438970.8465999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">6.1557000000000004</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451858.40379999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438974.0602000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.5846999999999998</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451855.98959999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438978.1484000003</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">6.4954999999999998</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451853.38880000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438983.5817999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">6.3342000000000001</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451852.9988</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438988.4687000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.8901000000000003</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451856.13179999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438995.7587000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.4935</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451859.37190000003</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439000.0483999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.6051000000000002</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451863.98869999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439002.8337000003</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.9577</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451868.64309999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439008.9665000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.5167999999999999</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451861.1925</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439027.0471999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451849.04859999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439035.3465999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.7454000000000001</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451844.20039999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439036.1689999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.9436999999999998</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451836.83120000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439030.1133000003</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">6.8917000000000002</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451831.23759999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439024.6923000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">6.1132</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451824.46830000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439021.1371999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.4368999999999996</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451812.96049999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439024.1102999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.2920999999999996</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451809.18800000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439029.4601999996</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.1010999999999997</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451806.02519999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439036.8126999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">2.7614999999999998</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451812.69260000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439039.7631000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.01</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451848.17560000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439047.8656000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">1.3167</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451866.74859999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439048.4204000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">0.93320000000000003</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451879.2426</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439048.3348000003</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">1.9481999999999999</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451885.94589999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439036.7030999996</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">2.9348999999999998</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451890.76059999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439030.8556000004</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4.2995000000000001</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451898.75540000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439025.9184999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5.3293999999999997</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451901.85879999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439021.2873999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4.7415000000000003</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451902.15360000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439016.1009</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4.4250999999999996</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451903.46970000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4439005.9813999999</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">3.4411999999999998</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451903.56459999998</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438997.3219999997</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4.2092000000000001</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451896.0503</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438989.8590000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4.9208999999999996</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451895.32500000001</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438985.8623000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4.9958</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">451901.63900000002</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">4438972.6745999996</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1:R36C3</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Φύλλο2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Φύλλο3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

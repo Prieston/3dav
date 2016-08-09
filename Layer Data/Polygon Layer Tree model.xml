@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>zion</Author>
+  <LastAuthor>zion</LastAuthor>
+  <Created>2015-07-06T14:49:43Z</Created>
+  <LastSaved>2015-07-06T14:56:03Z</LastSaved>
+  <Version>12.00</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>3915</WindowHeight>
+  <WindowWidth>3795</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>135</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s16">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="6" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">38.903799999999997</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">87.574100000000001</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">0.26590000000000003</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">51.464599999999997</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">98.903700000000001</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">0.21929999999999999</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">93.073700000000002</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">99.486999999999995</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">0.1026</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">88.532300000000006</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">69.987700000000004</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">2.2934999999999999</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">78.145200000000003</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">81.463200000000001</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">3.7073999999999998</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">67.534099999999995</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">85.521900000000002</Data></Cell>
+    <Cell ss:StyleID="s16"><Data ss:Type="Number">2.8956</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1:R6C3</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
