@@ -937,39 +937,47 @@ AddWater();
 }
 
 function Step4(){
+	var callbackhors = function(){
+
 		document.getElementById("AnimalPositionType_line").checked = true;
 					document.getElementById("AnimalLayerName").value = "Animal _polyline";
 					var e= document.getElementById("AnimalPositionType_selectmenu_line");
 					
 e.options[e.selectedIndex].value = "Animal Polyline";
 
-if(typeof Horse === "undefined"){
-	LoadAnimals("Horse");
-	alert("Model is Loaded");
-}
 animal = Horse;
 animalTable = morphs;
 
 AddAnimals(animalTable,animal);		
+
+	}
+		
+
+if(typeof Horse === "undefined"){
+	LoadAnimals("Horse",callbackhors);
+}else{callbackhors()}
+
 //////////
-document.getElementById("OtherPositionType_line").checked = true;
+
+var callbackcar = function () {
+	document.getElementById("OtherPositionType_line").checked = true;
 					document.getElementById("CarLayerName").value = "Car 1 _line";
 					var e= document.getElementById("OtherPositionType_selectmenu_line");
 					
 e.options[e.selectedIndex].value = "Car 1 Line";
-
-if(typeof Car === "undefined"){
-	LoadOther("Car");
-	alert("Model is Loaded");
-}
-
-
 AddCar();			
 ///
 		document.getElementById("CarLayerName").value = "Car 2 _line";					
 		e.options[e.selectedIndex].value = "Car 2 Line";
 
 AddCar();	
+}
+if(typeof Car === "undefined"){
+	LoadOther("Car",callbackcar);
+}else{callbackcar()}
+
+
+
 	
 }
 
