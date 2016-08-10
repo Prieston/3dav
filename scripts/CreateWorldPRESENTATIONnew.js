@@ -937,30 +937,36 @@ AddWater();
 }
 
 function Step4(){
-		document.getElementById("AnimalPositionType_line").checked = true;
+
+var callbackhors = function () {
+			document.getElementById("AnimalPositionType_line").checked = true;
 					document.getElementById("AnimalLayerName").value = "Animal _polyline";
 					var e= document.getElementById("AnimalPositionType_selectmenu_line");
 					
-e.options[e.selectedIndex].value = "Animal Polyline";
-var callbackhors = function () {
-	animal = Horse;
-animalTable = morphs;
+	e.options[e.selectedIndex].value = "Animal Polyline";
 
-AddAnimals(animalTable,animal);		
+	animal = Horse;
+	animalTable = morphs;
+
+	AddAnimals(animalTable,animal);		
 }
 if(typeof Horse === "undefined"){
 	LoadAnimals("Horse",callbackhors);
 }else{callbackhors()}
 
 //////////
-document.getElementById("OtherPositionType_line").checked = true;
+
+var callbackcar = function () {
+	document.getElementById("OtherPositionType_line").checked = true;
 					document.getElementById("CarLayerName").value = "Car 1 _line";
 					var e= document.getElementById("OtherPositionType_selectmenu_line");
 					
-e.options[e.selectedIndex].value = "Car 1 Line";
-var callbackcar = function () {
-	
-AddCar();
+	e.options[e.selectedIndex].value = "Car 1 Line";
+	AddCar();
+	document.getElementById("CarLayerName").value = "Car 2 _line";					
+			e.options[e.selectedIndex].value = "Car 2 Line";
+
+	AddCar();	
 }
 
 if(typeof Car === "undefined"){
@@ -968,10 +974,7 @@ if(typeof Car === "undefined"){
 }else{callbackcar()}
 			
 ///
-		document.getElementById("CarLayerName").value = "Car 2 _line";					
-		e.options[e.selectedIndex].value = "Car 2 Line";
-
-AddCar();	
+		
 	
 }
 
