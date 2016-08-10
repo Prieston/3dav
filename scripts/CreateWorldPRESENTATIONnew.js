@@ -723,7 +723,7 @@ var callbackpalm = function () {
 	LoadTrees("Palm_arecaceae",callbackpalm);
 }
 		else{callbackpalm()}
-	var callbackpelm = function () {
+	var callbackelm = function () {
 		TreeModelTable=Trees_Elm;	
 		TreeModel=Elm;	
 		document.getElementById("PlantLayerName").value="Elm _point";
