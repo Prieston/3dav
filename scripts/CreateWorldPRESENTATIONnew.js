@@ -685,7 +685,7 @@ var offsetY = 0;
 }
 function Step2(){
 
-var callback = function () {
+var callbackboug = function () {
 	TreeModelTable=Trees_Bougainvillier;	
 		TreeModel=Bougainvillier;	
 		document.getElementById("PlantLayerName").value="Bougainvillier _point";
@@ -695,9 +695,9 @@ var callback = function () {
 		AddTrees(TreeModelTable,TreeModel);
 }
 	if(typeof Bougainvillier === "undefined"){
-	LoadTrees("Bougainvillier",callback);
+	LoadTrees("Bougainvillier",callbackboug);
 }
-else{callback()}
+else{callbackboug()}
 		
 		// TreeModelTable=Trees_Bougainvillier;	
 		// TreeModel=Bougainvillier;	
@@ -709,13 +709,8 @@ else{callback()}
 		
 		////////////////
 	////////////////
-
-	if(typeof Palm_arecaceae === "undefined"){
-	LoadTrees("Palm_arecaceae");
-	alert("Model Palm_arecaceae is Loaded");
-}
-		
-		TreeModelTable=Trees_Palm_arecaceae;	
+var callbackpalm = function () {
+	TreeModelTable=Trees_Palm_arecaceae;	
 		TreeModel=Palm_arecaceae;	
 		document.getElementById("PlantLayerName").value="Palm_arecaceae _point";
 		document.getElementById("PlantPositionType_point").checked=true;
@@ -723,11 +718,12 @@ else{callback()}
 		var e = document.getElementById("PlantPositionType_selectmenu_point");
 	 e.options[e.selectedIndex].value = "Palm Point";
 		AddTrees(TreeModelTable,TreeModel);	
-	if(typeof Elm === "undefined"){
-	LoadTrees("Elm");
-	alert("Model Elm is Loaded");
 }
-		
+	if(typeof Palm_arecaceae === "undefined"){
+	LoadTrees("Palm_arecaceae",callbackpalm);
+}
+		else{callbackpalm()}
+	var callbackpelm = function () {
 		TreeModelTable=Trees_Elm;	
 		TreeModel=Elm;	
 		document.getElementById("PlantLayerName").value="Elm _point";
@@ -736,14 +732,15 @@ else{callback()}
 		var e = document.getElementById("PlantPositionType_selectmenu_point");
 	 e.options[e.selectedIndex].value = "Elm Point";
 		AddTrees(TreeModelTable,TreeModel);	
-			////////////////
-
-	if(typeof Ginger === "undefined"){
-	LoadTrees("Ginger");
-	alert("Model Ginger is Loaded");
-}
+	}
+	if(typeof Elm === "undefined"){
+	LoadTrees("Elm",callbackelm);
+}else{callbackelm()}
 		
-		TreeModelTable=Trees_Ginger;	
+		
+			////////////////
+			var callbackging = function () {
+				TreeModelTable=Trees_Ginger;	
 		TreeModel=Ginger;	
 		document.getElementById("PlantLayerName").value="Ginger _point";
 		document.getElementById("PlantPositionType_point").checked=true;
@@ -751,13 +748,15 @@ else{callback()}
 		var e = document.getElementById("PlantPositionType_selectmenu_point");
 	 e.options[e.selectedIndex].value = "Ginger Point";
 		AddTrees(TreeModelTable,TreeModel);	
-				////////////////
+			}
 
-	if(typeof Flamboyant === "undefined"){
-	LoadTrees("Flamboyant");
-	alert("Model Flamboyant is Loaded");
-}
+	if(typeof Ginger === "undefined"){
+	LoadTrees("Ginger",callbackging);
+}else{callbackging()}
 		
+		
+				////////////////
+	var callbackflam = function () {
 		TreeModelTable=Trees_Flamboyant;	
 		TreeModel=Flamboyant;	
 		document.getElementById("PlantLayerName").value="Flamboyant _point";
@@ -768,12 +767,13 @@ else{callback()}
 		AddTrees(TreeModelTable,TreeModel);	
 
 		////////////
-		if(typeof House === "undefined"){
-	LoadOther("House");
-	alert("Model House is Loaded");
-}
+	}
+	if(typeof Flamboyant === "undefined"){
+	LoadTrees("Flamboyant",callbackflam);
+}else{callbackflam()}
 		
-		document.getElementById("HouseLayerName").value="House1 _point";
+		var callbackhous = function () {
+			document.getElementById("HouseLayerName").value="House1 _point";
 		document.getElementById("HouseLayerOrientation").value = 225;
 		document.getElementById("OtherPositionType_point").checked=true;
 		var e = document.getElementById("OtherPositionType_selectmenu_point");
@@ -847,12 +847,15 @@ else{callback()}
 	 e.options[e.selectedIndex].value = "House8 Point";
 		
 		AddHouse();
-		////line
-			if(typeof Dracena === "undefined"){
-	LoadTrees("Dracena");
-	alert("Model Dracena is Loaded");
+		}
+		if(typeof House === "undefined"){
+	LoadOther("House",callbackhous);
 }
+else{callbackhous()}
 		
+		
+		////line
+	var callbackdrac = function () {
 		TreeModelTable=Trees_Dracena;	
 		TreeModel=Dracena;	
 		document.getElementById("PlantLayerName").value="Dracena _line";
@@ -862,13 +865,14 @@ else{callback()}
 		var e = document.getElementById("PlantPositionType_selectmenu_line");
 	 e.options[e.selectedIndex].value = "Dracena Line";
 		AddTrees(TreeModelTable,TreeModel);	
-		/////////polygon
-			if(typeof Bamboo === "undefined"){
-	LoadTrees("Bamboo");
-	alert("Model Bamboo is Loaded");
-}
+	}
+			if(typeof Dracena === "undefined"){
+	LoadTrees("Dracena",callbackdrac);
+	
+}else{callbackdrac()}
 		
-		TreeModelTable=Trees_Bamboo;	
+		var callbackbamb = function () {
+			TreeModelTable=Trees_Bamboo;	
 		TreeModel=Bamboo;	
 		document.getElementById("PlantLayerName").value="Bamboo1 _polygon";
 		document.getElementById("PlantPositionType_polygon").checked=true;
@@ -908,6 +912,13 @@ else{callback()}
 		document.getElementById("PlantLayerName").value="Bamboo8 _polygon";
 	 e.options[e.selectedIndex].value = "Bamboo8 Polygon";
 		AddTrees(TreeModelTable,TreeModel);	
+		}
+		/////////polygon
+			if(typeof Bamboo === "undefined"){
+	LoadTrees("Bamboo",callbackbamb);
+}else{callbackbamb()}
+		
+		
 }
 
 function Step3(){
@@ -931,29 +942,31 @@ function Step4(){
 					var e= document.getElementById("AnimalPositionType_selectmenu_line");
 					
 e.options[e.selectedIndex].value = "Animal Polyline";
-
-if(typeof Horse === "undefined"){
-	LoadAnimals("Horse");
-	alert("Model is Loaded");
-}
-animal = Horse;
+var callbackhors = function () {
+	animal = Horse;
 animalTable = morphs;
 
 AddAnimals(animalTable,animal);		
+}
+if(typeof Horse === "undefined"){
+	LoadAnimals("Horse",callbackhors);
+}else{callbackhors()}
+
 //////////
 document.getElementById("OtherPositionType_line").checked = true;
 					document.getElementById("CarLayerName").value = "Car 1 _line";
 					var e= document.getElementById("OtherPositionType_selectmenu_line");
 					
 e.options[e.selectedIndex].value = "Car 1 Line";
-
-if(typeof Car === "undefined"){
-	LoadOther("Car");
-	alert("Model is Loaded");
+var callbackcar = function () {
+	
+AddCar();
 }
 
-
-AddCar();			
+if(typeof Car === "undefined"){
+	LoadOther("Car",callbackcar);
+}else{callbackcar()}
+			
 ///
 		document.getElementById("CarLayerName").value = "Car 2 _line";					
 		e.options[e.selectedIndex].value = "Car 2 Line";
@@ -964,304 +977,4 @@ AddCar();
 
 function Step5(){
 		earthView()
-}
-function Step6(){
-				
-
-}
-function Step7(){
-				
-
-}
-function Step8(){
-					
-
-
-}
-function Step9(){
-	//create new point layers
-	//tree 2
-	var xmlDoc=loadXMLDoc("./Layer Data/Point Layer Tree model 2.xml");
-		var DataTagName = "Data";
-	
-	var XMLPointsLength = xmlDoc.getElementsByTagName(DataTagName).length -1;
-	document.getElementById("PointLayerName").value = "Point Layer Tree model 2";
-	
-	
-	
-	
-	for(var i=0;i<XMLPointsLength;i+=3){
-		CreatePointLayerTable(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+2].childNodes[0].nodeValue).toFixed(4));
-		var worldPos= UserCoordinatesXY(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4));
-		CLT_Point[i] =Number(worldPos.x);
-		CLT_Point[i+1] =Number(worldPos.y);
-		CLT_Point[i+2] =Number(worldPos.z);
-
-	}
-	CreatePointLayer();
-	clearCreatePointLayerTable();
-	//tree 3 (Boug)
-	var xmlDoc=loadXMLDoc("./Layer Data/Point Layer Tree model 3 (Boug).xml");
-		var DataTagName = "Data";
-	
-	var XMLPointsLength = xmlDoc.getElementsByTagName(DataTagName).length -1;
-	document.getElementById("PointLayerName").value = "Point Layer Tree model 3";
-	
-	
-	
-	
-	for(var i=0;i<XMLPointsLength;i+=3){
-		CreatePointLayerTable(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+2].childNodes[0].nodeValue).toFixed(4));
-		var worldPos= UserCoordinatesXY(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4));
-		CLT_Point[i] =Number(worldPos.x);
-		CLT_Point[i+1] =Number(worldPos.y);
-		CLT_Point[i+2] =Number(worldPos.z);
-
-	}
-	CreatePointLayer();
-	clearCreatePointLayerTable();
-//create new line layers
-//palm arecaceae road line layer
-	var xmlDoc=loadXMLDoc("./Layer Data/Line Layer Tree model 2.xml");
-		var DataTagName = "Data";
-	
-	var XMLPointsLength = xmlDoc.getElementsByTagName(DataTagName).length -1;
-	document.getElementById("LineLayerName").value = "Line Layer Tree model 2";
-	
-	
-	
-	
-	for(var i=0;i<XMLPointsLength;i+=3){
-		CreateLineLayerTable(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+2].childNodes[0].nodeValue).toFixed(4));
-		var worldPos= UserCoordinatesXY(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4));
-		CLT_Line[i] =Number(worldPos.x);
-		CLT_Line[i+1] =Number(worldPos.y);
-		CLT_Line[i+2] =Number(worldPos.z);
-
-	}
-
-	document.getElementById("SeperateLines").checked = true;
-	document.getElementById("calculateDistanse").checked = true;
-	document.getElementById("calculateAngle").checked = true;
-	CreateLineLayer();
-	clearCreateLineLayerTable();
-	//Winter tree
-		var xmlDoc=loadXMLDoc("./Layer Data/Line Layer Tree model 3 (WinterTree).xml");
-		var DataTagName = "Data";
-	
-	var XMLPointsLength = xmlDoc.getElementsByTagName(DataTagName).length -1;
-	document.getElementById("LineLayerName").value = "Line Layer Tree model 3";
-	
-	
-	
-	
-	for(var i=0;i<XMLPointsLength;i+=3){
-		CreateLineLayerTable(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+2].childNodes[0].nodeValue).toFixed(4));
-		var worldPos= UserCoordinatesXY(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4));
-		CLT_Line[i] =Number(worldPos.x);
-		CLT_Line[i+1] =Number(worldPos.y);
-		CLT_Line[i+2] =Number(worldPos.z);
-
-	}
-
-	document.getElementById("SeperateLines").checked = true;
-	document.getElementById("calculateDistanse").checked = true;
-	document.getElementById("calculateAngle").checked = true;
-	CreateLineLayer();
-	clearCreateLineLayerTable();
-	//animal line 2 layer
-	var xmlDoc=loadXMLDoc("./Layer Data/Animal Line Layer 2.xml");
-		var DataTagName = "Data";
-	
-	var XMLPointsLength = xmlDoc.getElementsByTagName(DataTagName).length -1;
-	document.getElementById("LineLayerName").value = "Animal Line Layer 2";
-	
-	
-	
-	
-	for(var i=0;i<XMLPointsLength;i+=3){
-		CreateLineLayerTable(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+2].childNodes[0].nodeValue).toFixed(4));
-		var worldPos= UserCoordinatesXY(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4));
-		CLT_Line[i] =Number(worldPos.x);
-		CLT_Line[i+1] =Number(worldPos.y);
-		CLT_Line[i+2] =Number(worldPos.z);
-
-	}
-
-	document.getElementById("PolyLine").checked = true;
-	document.getElementById("calculateDistanse").checked = true;
-	document.getElementById("calculateAngle").checked = true;
-	CreateLineLayer();
-	clearCreateLineLayerTable();
-
-	//Polygon layers extra
-	
-		//Polygon Tree Layer 2
-	var xmlDoc=loadXMLDoc("./Layer Data/Polygon Layer Tree model 2.xml");
-		var DataTagName = "Data";
-	
-	var XMLPointsLength = xmlDoc.getElementsByTagName(DataTagName).length -1;
-	document.getElementById("PolygonLayerName").value = "Polygon Layer Tree model 2";
-	
-	
-	
-	
-	for(var i=0;i<XMLPointsLength;i+=3){
-		CreatePolygonLayerTable(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+2].childNodes[0].nodeValue).toFixed(4));
-		var worldPos= UserCoordinatesXY(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4));
-		CLT_Polygon[i] =Number(worldPos.x);
-		CLT_Polygon[i+1] =Number(worldPos.y);
-		CLT_Polygon[i+2] =Number(worldPos.z);
-
-	}
-
-
-	CreatePolygonLayer();
-	clearCreatePolygonLayerTable();
-		//Polygon Tree Layer 3 (Bamboo)
-	var xmlDoc=loadXMLDoc("./Layer Data/Polygon Layer Tree model 3 (Bamboo).xml");
-		var DataTagName = "Data";
-	
-	var XMLPointsLength = xmlDoc.getElementsByTagName(DataTagName).length -1;
-	document.getElementById("PolygonLayerName").value = "Polygon Layer Tree model 3 (Bamboo)";
-	
-	
-	
-	
-	for(var i=0;i<XMLPointsLength;i+=3){
-		CreatePolygonLayerTable(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+2].childNodes[0].nodeValue).toFixed(4));
-		var worldPos= UserCoordinatesXY(Number(xmlDoc.getElementsByTagName(DataTagName)[i].childNodes[0].nodeValue).toFixed(4),Number(xmlDoc.getElementsByTagName(DataTagName)[i+1].childNodes[0].nodeValue).toFixed(4));
-		CLT_Polygon[i] =Number(worldPos.x);
-		CLT_Polygon[i+1] =Number(worldPos.y);
-		CLT_Polygon[i+2] =Number(worldPos.z);
-
-	}
-
-
-	CreatePolygonLayer();
-	clearCreatePolygonLayerTable();
-	//////////////////////
-	
-
-}
-function Step10(){
-	//ADD MODELS EXTRA
-	//point ELM
-	if(typeof Elm === "undefined"){
-	LoadTrees("Elm");
-	alert("Model is Loaded");
-}
-		
-		TreeModelTable=Trees_Elm;	
-		TreeModel=Elm;	
-		document.getElementById("PlantLayerName").value="Elm point";
-		document.getElementById("PlantPositionType_point").checked=true;
-		var e = document.getElementById("PlantPositionType_selectmenu_point");
-	 e.options[e.selectedIndex].value = "Point Layer Tree model 2";
-		AddTrees(TreeModelTable,TreeModel);
-		//
-		setTimeout(function(){	//point Bouglavainer
-	
-		if(typeof Bougainvillier === "undefined"){
-	LoadTrees("Bougainvillier");
-	alert("Model is Loaded");
-}
-		TreeModelTable=Trees_Bougainvillier;	
-		TreeModel=Bougainvillier;	
-		document.getElementById("PlantLayerName").value="Bougainvillier point 3";
-		document.getElementById("PlantPositionType_point").checked=true;
-		var e = document.getElementById("PlantPositionType_selectmenu_point");
-	 e.options[e.selectedIndex].value = "Point Layer Tree model 3";
-		AddTrees(TreeModelTable,TreeModel); }, 2000);
-	
-		//
-		setTimeout(function(){ //line palm road
-		if(typeof Palm_arecaceae === "undefined"){
-	LoadTrees("Palm_arecaceae");
-	alert("Model is Loaded");
-}
-		
-		TreeModelTable=Trees_Palm_arecaceae;	
-		TreeModel=Palm_arecaceae;	
-		document.getElementById("PlantLayerName").value="Palm_arecaceae line 2";
-		document.getElementById("PlantPositionType_line").checked=true;
-		document.getElementById("PlantPos_line_properties_interval").value=5;
-		
-		var e = document.getElementById("PlantPositionType_selectmenu_line");
-	 e.options[e.selectedIndex].value = "Line Layer Tree model 2";
-		AddTrees(TreeModelTable,TreeModel);	
-		}, 2000);
-		setTimeout(function(){
-			//line WinterTree
-		if(typeof Wintertree === "undefined"){
-	LoadTrees("Wintertree");
-	alert("Model is Loaded");
-}
-		
-		TreeModelTable=Trees_Wintertree;	
-		TreeModel=Wintertree;	
-		document.getElementById("PlantLayerName").value="Wintertree line";
-		document.getElementById("PlantPositionType_line").checked=true;
-		document.getElementById("PlantPos_line_properties_interval").value=5;
-		
-		var e = document.getElementById("PlantPositionType_selectmenu_line");
-	 e.options[e.selectedIndex].value = "Line Layer Tree model 3";
-		AddTrees(TreeModelTable,TreeModel);	 }, 4000);
-		//
-		setTimeout(function(){ 	//line animals
-				if(typeof Horse === "undefined"){
-	LoadAnimals("Horse");
-	alert("Model is Loaded");
-}
-			document.getElementById("AnimalPositionType_line").checked = true;
-					document.getElementById("AnimalLayerName").value = "Animal animation line 2";
-					var e= document.getElementById("AnimalPositionType_selectmenu_line");
-					
-e.options[e.selectedIndex].value = "Animal Line Layer 2";
-
-
-animal = Horse;
-animalTable = morphs;
-
-AddAnimals(animalTable,animal);	 }, 6000);
-		//
-setTimeout(function(){ 	
-//polygon trees
-if(typeof Bamboo === "undefined"){
-	LoadTrees("Bamboo");
-	alert("Model is Loaded");
-}
-		
-		TreeModelTable=Trees_Bamboo;	
-		TreeModel=Bamboo;	
-		document.getElementById("PlantLayerName").value="Bamboo polygon";
-		document.getElementById("PlantPositionType_polygon").checked=true;
-		document.getElementById("PlantPos_polygon_properties_PlaceAtBoundary").checked = true;
-		document.getElementById("PlantPos_polygon_properties_PlaceInside").checked = true;
-		document.getElementById("PlantPos_polygon_properties_intervalX").value = 3;
-		document.getElementById("PlantPos_polygon_properties_intervalY").value = 3;
-		
-		var e = document.getElementById("PlantPositionType_selectmenu_polygon");
-	 e.options[e.selectedIndex].value = "Polygon Layer Tree model 3 (Bamboo)";
-		AddTrees(TreeModelTable,TreeModel);	 }, 8000);	
-
-	setTimeout(function(){ //polygon trees
-if(typeof Bougainvillier === "undefined"){
-	LoadTrees("Bougainvillier");
-	alert("Model is Loaded");
-}
-		
-		TreeModelTable=Trees_Bougainvillier;	
-		TreeModel=Bougainvillier;	
-		document.getElementById("PlantLayerName").value="Bougainvillier polygon";
-		document.getElementById("PlantPositionType_polygon").checked=true;
-		document.getElementById("PlantPos_polygon_properties_PlaceAtBoundary").checked = true;
-		document.getElementById("PlantPos_polygon_properties_PlaceInside").checked = true;
-		document.getElementById("PlantPos_polygon_properties_intervalX").value = 7;
-		document.getElementById("PlantPos_polygon_properties_intervalY").value = 7;
-		
-		var e = document.getElementById("PlantPositionType_selectmenu_polygon");
-	 e.options[e.selectedIndex].value = "Polygon Layer Tree model 2";
-		AddTrees(TreeModelTable,TreeModel);	 }, 10000);
-		
 }

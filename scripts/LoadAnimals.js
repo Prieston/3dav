@@ -1,11 +1,13 @@
 
 var morphs=[];
-function LoadAnimals(name){
+function LoadAnimals(name,callback){
+	var callback = callback || function(){}
 	if(name=="Horse"){
 		loader.load( "./models/animated-animals/horse.js", function( geometry ) {
 						
 						
 						Horse = addMorphAnimal(geometry) ;
+						callback()
 					
 		} );
 	}

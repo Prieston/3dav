@@ -2,8 +2,8 @@
 				// model
 
 
-function LoadOther(name){
-				
+function LoadOther(name,callback){
+				var callback = callback || function(){}
 
 				var onProgress = function ( xhr ) {
 					if ( xhr.lengthComputable ) {
@@ -34,7 +34,7 @@ function LoadOther(name){
 					 var scale = 0.15/ (MapWidth*0.5/3);//upsos tabani
 					object.scale.set(scale,scale,scale);
 					House = object;
-					
+					callback()
 					
 				}, onProgress, onError );
 				}
@@ -56,7 +56,7 @@ function LoadOther(name){
 					object.scale.set(scale,scale,scale);
 				
 					Car = object;
-					
+					callback();
 				}, onProgress, onError );
 				}
 				
