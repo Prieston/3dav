@@ -684,28 +684,20 @@ var offsetY = 0;
 	clearCreateLineLayerTable();
 }
 function Step2(){
+
+var callback = function () {
+	TreeModelTable=Trees_Bougainvillier;	
+		TreeModel=Bougainvillier;	
+		document.getElementById("PlantLayerName").value="Bougainvillier _point";
+		document.getElementById("PlantPositionType_point").checked=true;
+		var e = document.getElementById("PlantPositionType_selectmenu_point");
+	 e.options[e.selectedIndex].value = "Bougainvillier Point";
+		AddTrees(TreeModelTable,TreeModel);
+}
 	if(typeof Bougainvillier === "undefined"){
-	LoadTrees("Bougainvillier");
-
-	TreeModelTable=Trees_Bougainvillier;	
-		TreeModel=Bougainvillier;	
-		document.getElementById("PlantLayerName").value="Bougainvillier _point";
-		document.getElementById("PlantPositionType_point").checked=true;
-		var e = document.getElementById("PlantPositionType_selectmenu_point");
-	 e.options[e.selectedIndex].value = "Bougainvillier Point";
-		AddTrees(TreeModelTable,TreeModel);
-
-	alert("Model Bougainvillier is Loaded");
+	LoadTrees("Bougainvillier",callback);
 }
-else{
-	TreeModelTable=Trees_Bougainvillier;	
-		TreeModel=Bougainvillier;	
-		document.getElementById("PlantLayerName").value="Bougainvillier _point";
-		document.getElementById("PlantPositionType_point").checked=true;
-		var e = document.getElementById("PlantPositionType_selectmenu_point");
-	 e.options[e.selectedIndex].value = "Bougainvillier Point";
-		AddTrees(TreeModelTable,TreeModel);
-}
+else{callback()}
 		
 		// TreeModelTable=Trees_Bougainvillier;	
 		// TreeModel=Bougainvillier;	

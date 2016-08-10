@@ -21,8 +21,10 @@ var Trees_Pine=[];
 var Trees_Wintertree=[];
 var Grass_Grass_01 = [];
 
-function LoadTrees(name){
+function LoadTrees(name,callback){
+		var callback = callback || function(){}
 		// model
+
 
 
 				
@@ -114,6 +116,7 @@ function LoadTrees(name){
             } );
 			}
 				
+				callback();
 }	
 
 
