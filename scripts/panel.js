@@ -92,6 +92,10 @@
 		,	stateManagement__enabled:	true // automatic cookie load & save enabled by default
 
 		,	showDebugMessages:			true // log and/or display messages from debugging & testing code
+
+		//my settings mrMe
+		
+		,south__size: 100
 		});
 
 		// if there is no state-cookie, then DISABLE state management initially
