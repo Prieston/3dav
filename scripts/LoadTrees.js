@@ -34,28 +34,28 @@ function LoadTrees(name,callback){
 			   loader.load( "./models/trees/Beech/Beech.json", function( geometry, materials ) {
 				   var scale = 20/ (MapWidth*0.5/25);
 				Beech =	addMorphTree(geometry,materials,scale);
-			
+				callback();
 				} );
 			}
 			if(name == "Bamboo"){
 			 loader.load( "./models/trees/Bamboo/Bamboo.json", function( geometry, materials ) {
 			  var scale = 20/ (MapWidth*0.5/4.5);
-			Bamboo =	addMorphTree(geometry,materials,scale);
-				
+				Bamboo =	addMorphTree(geometry,materials,scale);
+				callback();
             } );
 			}
 			if(name == "Banana"){
 			loader.load( "./models/trees/Banana/Banana.json", function( geometry, materials ) {
 				 var scale = 20/ (MapWidth*0.5/2.5);
-			Banana = addMorphTree(geometry,materials,scale);
-
+				Banana = addMorphTree(geometry,materials,scale);
+				callback();
             } );
 			}
 			if(name == "Bougainvillier"){
 			loader.load( "./models/trees/Bougainvillier/Bougainvillier.json", function( geometry, materials ) {
 			var scale = 20/ (MapWidth*0.5/6);
 			Bougainvillier =	addMorphTree(geometry,materials,scale);
-			
+			callback();
 		
 			
 				
@@ -65,14 +65,14 @@ function LoadTrees(name,callback){
 			loader.load( "./models/trees/Dracena/Dracena.json", function( geometry, materials ) {
 			var scale = 20/ (MapWidth*0.5/7);
 			Dracena =	addMorphTree(geometry,materials,scale);
-				
+			callback();
             } );
 			}
 			if(name == "Elm"){
 			loader.load( "./models/trees/Elm/Elm.json", function( geometry, materials ) {
 			var scale = 20/ (MapWidth*0.5/7);
 			Elm =	addMorphTree(geometry,materials,scale);
-	
+			callback();
             } );
 			}
 			if(name == "Flamboyant"){
@@ -80,14 +80,14 @@ function LoadTrees(name,callback){
 					loader.load( "./models/trees/Flamboyant/Flamboyant.json", function( geometry, materials ) {
 			var scale = 20/ (MapWidth*0.5/5);
 			Flamboyant =	addMorphTree(geometry,materials,scale);
-				
+				callback();
             } );
 			}
 			if(name == "Ginger"){
 					loader.load( "./models/trees/Ginger/Ginger.json", function( geometry, materials ) {
 			 var scale = 20/ (MapWidth*0.5/4.5);
 			Ginger =	addMorphTree(geometry,materials,scale);
-				
+				callback();
             } );
 			}
 			
@@ -98,25 +98,25 @@ function LoadTrees(name,callback){
 					loader.load( "./models/trees/Palm-arecaceae/Palm-arecaceae.json", function( geometry, materials ) {
 			var scale = 20/ (MapWidth*0.5/6);
 			Palm_arecaceae =	addMorphTree(geometry,materials,scale);
-				
+				callback();
             } );
 			}
 			if(name == "Pine"){
 					loader.load( "./models/trees/Pine/Pine.json", function( geometry, materials ) {
 			var scale = 20/ (MapWidth*0.5/40);
 			Pine =	addMorphTree(geometry,materials,scale);
-				
+				callback();
             } );
 			}
 			if(name == "Wintertree"){		
 					loader.load( "./models/trees/Wintertree/Wintertree.json", function( geometry, materials ) {
 			var scale = 20/ (MapWidth*0.5/8);
 			Wintertree =	addMorphTree(geometry,materials,scale);
-				
+				callback();
             } );
 			}
 				
-				callback();
+
 }	
 
 
