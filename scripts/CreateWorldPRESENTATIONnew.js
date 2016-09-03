@@ -76,7 +76,7 @@ var offsetY = 0;
 	///////create texture
 
 
-	var texture=THREE.ImageUtils.loadTexture( ["./geoprossesing2016/afitos.png"] );
+	var texture=THREE.ImageUtils.loadTexture( ["./images/afitos.png"] );
 
 	var newLayer = document.createElement("input");
 		
