@@ -6,11 +6,11 @@
 
 	<title>Demonstration</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="./css/widgets.css">
-	<link rel="stylesheet" type="text/css" href="./css/Qgis2threejs.css">
-	<link rel="stylesheet" type="text/css" href="./css/ToolBar.css">
-	<link type="text/css" rel="stylesheet" href="./css/layout-default-latest.css" />
-	<link href="./jquery/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/widgets.css">
+	<link rel="stylesheet" type="text/css" href="../css/Qgis2threejs.css">
+	<link rel="stylesheet" type="text/css" href="../css/ToolBar.css">
+	<link type="text/css" rel="stylesheet" href="../css/layout-default-latest.css" />
+	<link href="../jquery/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
 	
 	
 	
@@ -44,7 +44,7 @@ font-weight: bold;
 <div id = "LoadModelsDiv" style="width:100%;height:100%;position:absolute;z-index:1000;background-color:white">
 <center>
 
-<img src="./images/LOGO.jpg" style="margin-top:20%;width:50%;height:auto;"/>
+<img src="../images/LOGO.jpg" style="margin-top:20%;width:50%;height:auto;"/>
 <div id="progressbar" style="color:#CCCFFF;width:50%;position:relative"><div class="progress-label">Loading...</div></div>
 
 </center>
@@ -58,13 +58,13 @@ font-weight: bold;
 			<h4 style="margin:5px">Layer Panel</h4>
 			<hr style="margin:0px;color:#FFF"/>
 			<ul>
-				<li id="MapTextureLayer" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Map Texture</li>
+				<li id="MapTextureLayer" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Map Texture</li>
 				
 				<div id="MapTextureLayerContent" style="display:none;">
 					
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="MapTextureLayer_Geometry" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="MapTextureLayer_Geometry" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Geometry</li>
 							
 						
@@ -83,7 +83,7 @@ font-weight: bold;
 						
 						<ul style="padding:0px 0px 0px 10px;clear:left">
 						
-							<li id="MapTextureLayer_Texture" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="MapTextureLayer_Texture" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Texture</li>
 							
 						
@@ -99,13 +99,13 @@ font-weight: bold;
 					</div>
 			</ul>
 			<ul>
-				<li id="ModelLayer" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Model Layer</li>
+				<li id="ModelLayer" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Model Layer</li>
 				
 				<div id="ModelLayerContent" style="display:none;">
 					
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="ModelLayer_Plants" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="ModelLayer_Plants" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Plants</li>
 							
 						
@@ -119,7 +119,7 @@ font-weight: bold;
 						
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="ModelLayer_Animals" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="ModelLayer_Animals" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Animals</li>
 							
 						
@@ -133,7 +133,7 @@ font-weight: bold;
 						
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="ModelLayer_Ground" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="ModelLayer_Ground" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Water</li>
 							
 						
@@ -146,7 +146,7 @@ font-weight: bold;
 						</ul>
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="ModelLayer_Other" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="ModelLayer_Other" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Other</li>
 							
 						
@@ -163,13 +163,13 @@ font-weight: bold;
 			
 			
 			<ul>
-				<li id="MapLayer" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Map Layer</li>
+				<li id="MapLayer" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">Map Layer</li>
 				
 				<div id="MapLayerContent" style="display:none;">
 					
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="MapLayer_Points" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="MapLayer_Points" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Points</li>
 							
 						
@@ -183,7 +183,7 @@ font-weight: bold;
 						
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="MapLayer_Lines" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="MapLayer_Lines" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Lines</li>
 							
 						
@@ -197,7 +197,7 @@ font-weight: bold;
 						
 						<ul style="padding:0px 0px 0px 10px">
 						
-							<li id="MapLayer_Polygon" style="list-style-image:url(./images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
+							<li id="MapLayer_Polygon" style="list-style-image:url(../images/bullet.png);cursor: pointer;" onclick="displayCloseLayers(this.id)">
 							Polygon</li>
 							
 						
@@ -258,7 +258,7 @@ font-weight: bold;
 		<h2 style="position:relative;">Plant Properties</h2>
 		<ul style="float:left">
 		
-					<li id="PlantPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id);">Position Type</li>
+					<li id="PlantPositionType"style="list-style-image:url(../images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id);">Position Type</li>
 					
 					<div id="PlantPositionTypeContent" style="display:none;">
 					
@@ -319,7 +319,7 @@ font-weight: bold;
 <h2 style="position:relative;">Animal Properties</h2>
 		<ul style="float:left">
 		
-					<li id="AnimalPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
+					<li id="AnimalPositionType"style="list-style-image:url(../images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
 					
 					<div id="AnimalPositionTypeContent" style="display:none;">
 					
@@ -356,7 +356,7 @@ font-weight: bold;
 <h2 style="position:relative;">Water Properties</h2>
 		<ul style="float:left">
 		
-					<li id="GroundPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
+					<li id="GroundPositionType"style="list-style-image:url(../images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
 					
 					<div id="GroundPositionTypeContent" style="display:none;">
 					
@@ -391,7 +391,7 @@ font-weight: bold;
 <h2 style="position:relative;">Other Model Properties</h2>
 		<ul style="float:left">
 		
-					<li id="OtherPositionType"style="list-style-image:url(./images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
+					<li id="OtherPositionType"style="list-style-image:url(../images/bullet.png);cursor: pointer;color:#000" onclick="displayCloseLayers(this.id)">Position Type</li>
 					
 					<div id="OtherPositionTypeContent" style="display:none;">
 					
@@ -873,62 +873,62 @@ font-weight: bold;
 	
 	<!-- LOAD SCRIPTS -->
 	
-	<script src="./threejs/three.min.js"></script>
-	<script src="./scripts/Qgis2threejs.js"></script>
+	<script src="../threejs/three.min.js"></script>
+	<script src="../scripts/Qgis2threejs.js"></script>
 
 	
-	<script src="./threejs/TrackballControls.js"></script>
-	<script src="./scripts/Container.js"></script>
+	<script src="../threejs/TrackballControls.js"></script>
+	<script src="../scripts/Container.js"></script>
 	
-	<script src="./jquery/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
-	<script src="./jquery/jquery-ui-1.11.4/jquery-ui.js"></script>
-	<script src="./jquery/jquery-latest.js"></script>
-	<script src="./jquery/jquery-ui-latest.js"></script>
-	<script src="./jquery/jquery.layout-1.3.0.rc30.80.js"></script>
-	<script src="./scripts/Dialog&Tabs.js"></script>
-	<script src="./scripts/ModalForm.js"></script>
-	<script src="./scripts/panel.js"></script>
-	<script src="./scripts/DisplayAndClose.js"></script>
-	<script src="./scripts/ToolbarFunctions.js"></script>
-	<script src="./scripts/jscolor/jscolor.js"></script>
+	<script src="../jquery/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+	<script src="../jquery/jquery-ui-1.11.4/jquery-ui.js"></script>
+	<script src="../jquery/jquery-latest.js"></script>
+	<script src="../jquery/jquery-ui-latest.js"></script>
+	<script src="../jquery/jquery.layout-1.3.0.rc30.80.js"></script>
+	<script src="../scripts/Dialog&Tabs.js"></script>
+	<script src="../scripts/ModalForm.js"></script>
+	<script src="../scripts/panel.js"></script>
+	<script src="../scripts/DisplayAndClose.js"></script>
+	<script src="../scripts/ToolbarFunctions.js"></script>
+	<script src="../scripts/jscolor/jscolor.js"></script>
 	
 	<!-------->	
-	<script src="./scripts/js/Mirror.js"></script>
-	<script src="./scripts/js/WaterShader.js"></script>
+	<script src="../scripts/js/Mirror.js"></script>
+	<script src="../scripts/js/WaterShader.js"></script>
 
 	<!-------->
 <!-----------------------------------TEST SCRIPTS--------------------------------------- -->
 
-	<script src="./scripts/computeCoords.js"></script>
+	<script src="../scripts/computeCoords.js"></script>
 
-	<script src="./scripts/AddWater.js"></script>
-	<script src="./scripts/AddTrees.js"></script>						
-	<script src="./scripts/AddHorse.js"></script> 
-<script src="./scripts/CalculateDeltaPosition.js"></script> 
+	<script src="../scripts/AddWater.js"></script>
+	<script src="../scripts/AddTrees.js"></script>						
+	<script src="../scripts/AddHorse.js"></script> 
+<script src="../scripts/CalculateDeltaPosition.js"></script> 
 
 
 <!--<script src="./scripts/WolfLoader.js"></script>---->
-	<script src="./scripts/computeAnimationPosition.js"></script>
-	<script src="./scripts/ThemeliodiProblimata.js"></script>
-	<script src="./scripts/LoadTrees.js"></script>
-	<script src="./scripts/LoadAnimals.js"></script>
-	<script src="./scripts/createModelLayer.js"></script>
-	<script src="./scripts/SetWorldWidth.js"></script>
-	<script src="./scripts/Create3DGeometry.js"></script>
-	<script src="./scripts/CreateWorld.js"></script>
-	<script src="./scripts/UploadXML.js"></script>
-	<script src="./scripts/loaders/DDSLoader.js"></script>
-	<script src="./scripts/loaders/MTLLoader.js"></script>
-	<script src="./scripts/loaders/OBJMTLLoader.js"></script>
-	<script src="./scripts/loaders/OBJLoader.js"></script>
-	<script src="./scripts/PointLinePolygonModels.js"></script>
-	<script src="./scripts/LoadOther.js"></script>
-	<script src="./scripts/AddHouse.js"></script>
-	<script src="./scripts/AddCar.js"></script>
-	<script src="./scripts/CreateWorldPRESENTATION.js"></script>
+	<script src="../scripts/computeAnimationPosition.js"></script>
+	<script src="../scripts/ThemeliodiProblimata.js"></script>
+	<script src="../scripts/LoadTrees.js"></script>
+	<script src="../scripts/LoadAnimals.js"></script>
+	<script src="../scripts/createModelLayer.js"></script>
+	<script src="../scripts/SetWorldWidth.js"></script>
+	<script src="../scripts/Create3DGeometry.js"></script>
+	<script src="../scripts/CreateWorld.js"></script>
+	<script src="../scripts/UploadXML.js"></script>
+	<script src="../scripts/loaders/DDSLoader.js"></script>
+	<script src="../scripts/loaders/MTLLoader.js"></script>
+	<script src="../scripts/loaders/OBJMTLLoader.js"></script>
+	<script src="../scripts/loaders/OBJLoader.js"></script>
+	<script src="../scripts/PointLinePolygonModels.js"></script>
+	<script src="../scripts/LoadOther.js"></script>
+	<script src="../scripts/AddHouse.js"></script>
+	<script src="../scripts/AddCar.js"></script>
+	<script src="../scripts/CreateWorldPRESENTATION.js"></script>
 
 	
-<script src="./scripts/ffun.js"></script>
+<script src="../scripts/ffun.js"></script>
 
 
 
